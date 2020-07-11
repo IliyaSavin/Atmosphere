@@ -1,5 +1,5 @@
 {
-  "name": "smart-home",
+  "name": "atmosphere",
   "version": "1.0.0",
   "description": "Back-end for smart home project",
   "main": "server.js",
@@ -22,7 +22,8 @@
     "mongoose": "^5.9.6",
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
-    "react-helmet": "^6.0.0"
+    "react-helmet": "^6.0.0",
+    "tedious": "^8.3.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

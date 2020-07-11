@@ -1,11 +1,11 @@
 ﻿const express = require('express');
-const connectDB = require('./config/db');
+
 const path = require('path');
 
 const app = express();
 
 // Connect to database
-connectDB();
+//connectDB();
 
 // Init Middleware
 app.use(express.json({ extended: false }));
@@ -17,9 +17,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', (req, res) => {
-
-});
+app.use('/api/get', require('./routes/api/get'));
+app.use('/api/main', require('./routes/api/main'));
 // Define Routes
 /*app.use('/api/client', require('./routes/api/client'));
 app.use('/api/auth', require('./routes/api/auth'));

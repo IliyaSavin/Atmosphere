@@ -1,20 +1,17 @@
-﻿const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI');
+﻿var config = {
+    authentication: {
+        options: {
+          userName: "adminserv", // update me
+          password: "123456789Qw" // update me
+        },
+        type: "default"
+      },
+      server: "nubipsserver.database.windows.net", // update me
+      options: {
+        database: "Practice", //update me
+        encrypt: true,
+        trustServerCertificate: true
+      }
+};
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect(db, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-            useFindAndModify: false
-        });
-        console.log('MongoDB Connected...');
-    } catch(err) {
-        console.error(err.message);
-        process.exit(1);
-    }
-}
-
-module.exports = connectDB;
+module.exports = config;
