@@ -4,15 +4,13 @@ import MainContent from './MainContent';
 class ContentWrapper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showMainContent: true,
-    };
+    this.state = {};
   }
 
   render() {
     return (
       <div className='content_wrapper'>
-        {this.state.showMainContent ? <MainContent /> : 'sadas'}
+        {this.props.showMainContent ? <MainContent /> : 'sadas'}
       </div>
     );
   }

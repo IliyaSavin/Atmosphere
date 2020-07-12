@@ -97,13 +97,13 @@ function MainContent(props) {
           <div className='tables_name'>Датчики</div>
           <div className='sensors_header'>
             <div>ID датчика</div>
-            <div>Единица измерения</div>
             <div>Модель</div>
-            <div>Интервал</div>
-            <div>Обозначение</div>
-            <div>Параметр</div>
             <div>Производитель</div>
+            <div>Интервал</div>
             <div>Точность</div>
+            <div>Параметр</div>
+            <div>Единица измерения</div>
+            <div>Обозначение</div>
           </div>
 
           <div className='sensors_wrapper'>
@@ -172,11 +172,11 @@ function MainContent(props) {
 
           <div className='tables_name'>Замер данных датчика</div>
           <div className='measurments_header'>
-            <div>ID датчика</div>
             <div>ID замера данных</div>
+            <div>ID датчика</div>
             <div>ID местности</div>
-            <div>Время замера</div>
             <div>Значение</div>
+            <div>Время замера</div>
           </div>
 
           <div className='sensors_wrapper'>
