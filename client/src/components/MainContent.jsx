@@ -126,11 +126,11 @@ function MainContent(props) {
           <div className='optimal_header'>
             <div>ID местности</div>
             <div>Время года</div>
-            <div>Единица измерения</div>
-            <div>Параметр</div>
-            <div>Обозначение</div>
-            <div>Верхняя граница</div>
             <div>Нижняя граница</div>
+            <div>Верхняя граница</div>
+            <div>Параметр</div>
+            <div>Единица измерения</div>
+            <div>Обозначение</div>
           </div>
 
           <div className='sensors_wrapper'>
