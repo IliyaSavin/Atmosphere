@@ -27,7 +27,7 @@
     "tedious": "^8.3.0"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0",
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.2"
   }
 }

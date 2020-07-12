@@ -22,15 +22,8 @@ app.use((req, res, next) => {
 
 app.use('/api/get', require('./routes/api/get'));
 app.use('/api/main', require('./routes/api/main'));
-// Define Routes
-/*app.use('/api/client', require('./routes/api/client'));
-app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/profile', require('./routes/api/profile'));
-app.use('/api/goods', require('./routes/api/goods'));
-app.use('/api/cart', require('./routes/api/cart'));
-app.use('/api/order', require('./routes/api/order'));
-app.use('/api/review', require('./routes/api/review'));
-app.use('/api/admin', require('./routes/api/admin'));*/
+app.use('/api/add', require('./routes/api/add'));
+
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
