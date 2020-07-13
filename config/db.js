@@ -10,6 +10,7 @@
       options: {
         database: "Practice", //update me
         encrypt: true,
+        packetSize: 32768,
         trustServerCertificate: true
       }
 };
