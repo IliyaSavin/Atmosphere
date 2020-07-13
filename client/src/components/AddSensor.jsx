@@ -135,7 +135,11 @@ function AddSensor(props) {
       <div className='add_line_wrapper'>
         <div>Интервал</div>
         <div>
-          <input type='text' onChange={onChangeInterval} />
+          <input
+            type='text'
+            onChange={onChangeInterval}
+            placeholder='ЧЧ:ММ:СС'
+          />
         </div>
       </div>
 
