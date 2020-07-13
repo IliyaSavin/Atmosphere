@@ -7,22 +7,40 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMainContent: true,
+      showMainContent: false,
+      showAddSensor: true,
     };
-    this.onShowHide = this.onShowHide.bind(this);
+    this.onShowMain = this.onShowMain.bind(this);
+    this.onShowAddSensor = this.onShowAddSensor.bind(this);
   }
 
-  onShowHide() {
-    const newValue = !this.state.showMainContent;
-    this.setState({showMainContent: newValue});
+  onShowMain() {
+    this.setState({
+      showAddSensor: false,
+      showMainContent: true,
+    });
+  }
+
+  onShowAddSensor() {
+    this.setState({
+      showAddSensor: true,
+      showMainContent: false,
+    });
   }
 
   render() {
     return (
       <div className='home'>
         <Wrapper>
-          <ControlPanel onShowHide={this.onShowHide} />
-          <ContentWrapper showMainContent={this.state.showMainContent} />
+          <ControlPanel
+            onShowMain={this.onShowMain}
+            onShowAddSensor={this.onShowAddSensor}
+          />
+          <ContentWrapper
+            onShowMain={this.onShowMain}
+            showMainContent={this.state.showMainContent}
+            showAddSensor={this.state.showAddSensor}
+          />
         </Wrapper>
       </div>
     );
