@@ -24,8 +24,14 @@ const ControlPanel = (props) => {
       >
         Добавить опт. значение
       </button>
-      <button onClick={() => {}}>Добавить местность</button>
-      <button onClick={() => {}}>Добавить время года</button>
+      <button
+        onClick={() => {
+          props.onShowAddTerrain();
+        }}
+      >
+        Добавить местность
+      </button>
+      <button onClick={() => {}}>Добавить замер данных датчика</button>
       <button onClick={() => {}}>Добавить измеряемую величину</button>
     </div>
   );

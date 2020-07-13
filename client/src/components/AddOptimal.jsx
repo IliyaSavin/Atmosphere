@@ -161,7 +161,7 @@ function AddOptimal(props) {
           <select onChange={onChangeTerrain}>
             {terrain.map((terrain) => (
               <option key={terrain.id_местности} value={terrain.id_местности}>
-                {terrain.Тип_местности}
+                {terrain.Тип_местности} #{terrain.id_местности}
               </option>
             ))}
           </select>
