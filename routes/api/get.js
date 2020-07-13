@@ -10,6 +10,7 @@ router.get('/seasons', async (req, res) => {
     connection.on('connect', function(err) {
         var all = [];
         request = new Request("select id_времени_года, Название from Время_года", function(err, rowCount, rows) {
+            connection.close();
             if (err) {
                 res.status(500).send('Server error');
             } else {
@@ -25,6 +26,7 @@ router.get('/seasons', async (req, res) => {
           });
         connection.execSql(request);
     })
+    
 })
 
 router.get('/measuredValue', async (req, res) => {
@@ -33,6 +35,7 @@ router.get('/measuredValue', async (req, res) => {
     connection.on('connect', function(err) {
         var all = [];
         request = new Request("select id_измеряемой_величины, Название, Единица_измерения, Обозначение from Измеряемая_величина", function(err, rowCount, rows) {
+            connection.close();
             if (err) {
                 res.status(500).send('Server error');
             } else {
@@ -56,6 +59,7 @@ router.get('/terrain', async (req, res) => {
     connection.on('connect', function(err) {
         var all = [];
         request = new Request("select id_местности, Тип_местности from Местность", function(err, rowCount, rows) {
+            connection.close();
             if (err) {
                 res.status(500).send('Server error');
             } else {
@@ -79,6 +83,7 @@ router.get('/sensors', async (req, res) => {
     connection.on('connect', function(err) {
         var all = [];
         request = new Request("select id_датчика, Модель from Датчик", function(err, rowCount, rows) {
+            connection.close();
             if (err) {
                 res.status(500).send('Server error');
             } else {
