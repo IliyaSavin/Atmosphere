@@ -14,30 +14,25 @@ function AddTerrain(props) {
   function onChangeTypeTerrain(e) {
     const newValue = e.target.value;
     setTypeTerrain(newValue);
-    console.log(typeTerrain);
   }
 
   function onChangeSquare(e) {
     const newValue = e.target.value;
     setSquare(parseFloat(newValue));
-    console.log(square);
   }
 
   function onChangeLatitude(e) {
     const newValue = e.target.value;
     setLatitude(parseFloat(newValue));
-    console.log(latitude);
   }
 
   function onChangeLongitude(e) {
     const newValue = e.target.value;
     setLongitude(parseFloat(newValue));
-    console.log(longitude);
   }
 
   const OnSubmitForm = (e) => {
     e.preventDefault();
-    console.log();
 
     if (typeTerrain && square && latitude && longitude) {
       const data = {
@@ -54,7 +49,6 @@ function AddTerrain(props) {
           },
         })
         .then((response) => {
-          console.log(response);
           props.onShowMain();
         })
         .catch(function (error) {

@@ -17,37 +17,29 @@ function AddOptimal(props) {
   function onChangeMeasured(e) {
     const newValue = e.target.value;
     setMeasured(parseInt(newValue));
-    console.log(measured);
   }
 
   function onChangeTerrain(e) {
     const newValue = e.target.value;
     setSelectedTerrain(parseInt(newValue));
-    console.log(selectedTerrain);
   }
 
   function onChangeSeason(e) {
     const newValue = e.target.value;
     setSelectedSeason(parseInt(newValue));
-    console.log(selectedSeason);
   }
 
   function onChangeTop(e) {
     const newValue = e.target.value;
     setTop(parseFloat(newValue));
-    console.log(top);
   }
 
   function onChangeBottom(e) {
     const newValue = e.target.value;
     setBottom(parseFloat(newValue));
-    console.log(bottom);
   }
 
-  const OnSubmitForm = (e) => {
-    e.preventDefault();
-    console.log(measured);
-
+  function sentData() {
     if (bottom && top) {
       const data = {
         id_value: measured,
@@ -57,8 +49,6 @@ function AddOptimal(props) {
         top: top,
       };
 
-      console.log(data);
-
       axios
         .post('http://localhost:5000/api/add/optimal', data, {
           headers: {
@@ -66,13 +56,43 @@ function AddOptimal(props) {
           },
         })
         .then((response) => {
-          console.log(response);
           props.onShowMain();
         })
         .catch(function (error) {
           console.log(error);
         });
     } else alert('Залолните все поля');
+  }
+
+  const OnSubmitForm = (e) => {
+    e.preventDefault();
+    let isCreated = false;
+
+    if (selectedSeason && selectedTerrain && measured) {
+      const data = {
+        id_value: measured,
+        id_season: selectedSeason,
+        id_terrain: selectedTerrain,
+      };
+
+      axios
+        .post('http://localhost:5000/api/add/checkOptimal', data, {
+          headers: {
+            'Content-type': 'application/json',
+          },
+        })
+        .then((response) => {
+          isCreated = response.data.isCreated;
+          if (isCreated) {
+            alert('Значение уже существует');
+          } else {
+            sentData();
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
 
   function fetchMeasuredValue() {
@@ -136,7 +156,6 @@ function AddOptimal(props) {
     <Loader />
   ) : (
     <form className='add_sensor' onSubmit={OnSubmitForm}>
-      {console.log(season)}
       <div className='add_header'>Добавить оптимальное значение</div>
 
       <div className='add_line_wrapper'>

@@ -16,30 +16,25 @@ function AddSensorData(props) {
   function onChangeDate(e) {
     const newValue = e.target.value;
     setDate(newValue.replace('T', ' '));
-    console.log(date);
   }
 
   function onChangeTerrain(e) {
     const newValue = e.target.value;
     setSelectedTerrain(parseInt(newValue));
-    console.log(selectedTerrain);
   }
 
   function onChangeSensor(e) {
     const newValue = e.target.value;
     setSelectedSensor(parseInt(newValue));
-    console.log(selectedSensor);
   }
 
   function onChangeSensorData(e) {
     const newValue = e.target.value;
     setSensorData(parseFloat(newValue));
-    console.log(sensorData);
   }
 
   const OnSubmitForm = (e) => {
     e.preventDefault();
-    console.log();
 
     if (sensorData && date) {
       const data = {
@@ -56,7 +51,6 @@ function AddSensorData(props) {
           },
         })
         .then((response) => {
-          console.log(response);
           props.onShowMain();
         })
         .catch(function (error) {
@@ -109,7 +103,6 @@ function AddSensorData(props) {
     <Loader />
   ) : (
     <form className='add_sensor' onSubmit={OnSubmitForm}>
-      {console.log(sensors)}
       <div className='add_header'>Добавить замер данных датчика</div>
 
       <div className='add_line_wrapper'>

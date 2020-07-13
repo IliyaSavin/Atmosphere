@@ -87,13 +87,16 @@ function MainContent(props) {
       });
   };
 
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   return (
     <div className='main_content'>
       {loading ? (
         <Loader />
       ) : (
         <div>
-          {console.log(measurments)}
           <div className='tables_name'>Датчики</div>
           <div className='sensors_header'>
             <div>ID датчика</div>
@@ -136,7 +139,7 @@ function MainContent(props) {
           <div className='sensors_wrapper'>
             {optimal.map((optimal) => (
               <LineOptimal
-                key={optimal.id_местности}
+                key={optimal.id_местности + getRandomInt(9999)}
                 id={optimal.id_местности}
                 season={optimal.Время_года}
                 unit={optimal.Единица_измерения}

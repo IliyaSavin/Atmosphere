@@ -7,17 +7,19 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMainContent: false,
+      showMainContent: true,
       showAddSensor: false,
       showAddOptimal: false,
       showAddTerrain: false,
-      showAddSensorData: true,
+      showAddSensorData: false,
+      showAddMeasuredValue: false,
     };
     this.onShowMain = this.onShowMain.bind(this);
     this.onShowAddSensor = this.onShowAddSensor.bind(this);
     this.onShowAddOptimal = this.onShowAddOptimal.bind(this);
     this.onShowAddTerrain = this.onShowAddTerrain.bind(this);
     this.onShowAddSensorData = this.onShowAddSensorData.bind(this);
+    this.onShowAddMeasuredValue = this.onShowAddMeasuredValue.bind(this);
   }
 
   onShowMain() {
@@ -26,6 +28,7 @@ class Home extends React.Component {
       showAddOptimal: false,
       showMainContent: true,
       showAddTerrain: false,
+      showAddMeasuredValue: false,
       showAddSensorData: false,
     });
   }
@@ -36,6 +39,7 @@ class Home extends React.Component {
       showMainContent: false,
       showAddOptimal: false,
       showAddTerrain: false,
+      showAddMeasuredValue: false,
       showAddSensorData: false,
     });
   }
@@ -46,6 +50,7 @@ class Home extends React.Component {
       showMainContent: false,
       showAddOptimal: false,
       showAddTerrain: true,
+      showAddMeasuredValue: false,
       showAddSensorData: false,
     });
   }
@@ -56,6 +61,7 @@ class Home extends React.Component {
       showMainContent: false,
       showAddOptimal: true,
       showAddTerrain: false,
+      showAddMeasuredValue: false,
       showAddSensorData: false,
     });
   }
@@ -66,8 +72,19 @@ class Home extends React.Component {
       showMainContent: false,
       showAddOptimal: false,
       showAddTerrain: false,
-      showAddSensorData: false,
+      showAddMeasuredValue: false,
       showAddSensorData: true,
+    });
+  }
+
+  onShowAddMeasuredValue() {
+    this.setState({
+      showAddSensor: false,
+      showMainContent: false,
+      showAddOptimal: false,
+      showAddTerrain: false,
+      showAddSensorData: false,
+      showAddMeasuredValue: true,
     });
   }
 
@@ -81,6 +98,7 @@ class Home extends React.Component {
             onShowAddOptimal={this.onShowAddOptimal}
             onShowAddTerrain={this.onShowAddTerrain}
             onShowAddSensorData={this.onShowAddSensorData}
+            onShowAddMeasuredValue={this.onShowAddMeasuredValue}
           />
           <ContentWrapper
             onShowMain={this.onShowMain}
@@ -89,6 +107,7 @@ class Home extends React.Component {
             showAddOptimal={this.state.showAddOptimal}
             showAddTerrain={this.state.showAddTerrain}
             showAddSensorData={this.state.showAddSensorData}
+            showAddMeasuredValue={this.state.showAddMeasuredValue}
           />
         </Wrapper>
       </div>

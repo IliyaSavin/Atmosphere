@@ -17,36 +17,30 @@ function AddSensor(props) {
   function onChangeMeasured(e) {
     const newValue = e.target.value;
     setMeasured(newValue);
-    console.log(measured);
   }
 
   function onChangeModel(e) {
     const newValue = e.target.value;
     setModel(newValue);
-    console.log(model);
   }
 
   function onChangeManufacture(e) {
     const newValue = e.target.value;
     setManufacture(newValue);
-    console.log(manufacture);
   }
 
   function onChangePrecision(e) {
     const newValue = e.target.value;
     setPrecision(newValue);
-    console.log(precision);
   }
 
   function onChangeInterval(e) {
     const newValue = e.target.value;
     setInterval(newValue);
-    console.log(interval);
   }
 
   const OnSubmitForm = (e) => {
     e.preventDefault();
-    console.log(measured);
 
     if (regTime.test(interval) && model && manufacture && precision) {
       const data = {
@@ -64,7 +58,6 @@ function AddSensor(props) {
           },
         })
         .then((response) => {
-          console.log(response);
           props.onShowMain();
         })
         .catch(function (error) {
