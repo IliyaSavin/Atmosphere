@@ -8,15 +8,18 @@ class Home extends React.Component {
     super(props);
     this.state = {
       showMainContent: false,
-      showAddSensor: true,
+      showAddSensor: false,
+      showAddOptimal: true,
     };
     this.onShowMain = this.onShowMain.bind(this);
     this.onShowAddSensor = this.onShowAddSensor.bind(this);
+    this.onShowAddOptimal = this.onShowAddOptimal.bind(this);
   }
 
   onShowMain() {
     this.setState({
       showAddSensor: false,
+      showAddOptimal: false,
       showMainContent: true,
     });
   }
@@ -25,6 +28,15 @@ class Home extends React.Component {
     this.setState({
       showAddSensor: true,
       showMainContent: false,
+      showAddOptimal: false,
+    });
+  }
+
+  onShowAddOptimal() {
+    this.setState({
+      showAddSensor: false,
+      showMainContent: false,
+      showAddOptimal: true,
     });
   }
 
@@ -35,11 +47,13 @@ class Home extends React.Component {
           <ControlPanel
             onShowMain={this.onShowMain}
             onShowAddSensor={this.onShowAddSensor}
+            onShowAddOptimal={this.onShowAddOptimal}
           />
           <ContentWrapper
             onShowMain={this.onShowMain}
             showMainContent={this.state.showMainContent}
             showAddSensor={this.state.showAddSensor}
+            showAddOptimal={this.state.showAddOptimal}
           />
         </Wrapper>
       </div>

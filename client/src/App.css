@@ -228,6 +228,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   align-self: center;
+  margin-top: 15%;
 }
 
 .lds-facebook {
