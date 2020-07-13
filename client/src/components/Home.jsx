@@ -9,11 +9,13 @@ class Home extends React.Component {
     this.state = {
       showMainContent: false,
       showAddSensor: false,
-      showAddOptimal: true,
+      showAddOptimal: false,
+      showAddTerrain: true,
     };
     this.onShowMain = this.onShowMain.bind(this);
     this.onShowAddSensor = this.onShowAddSensor.bind(this);
     this.onShowAddOptimal = this.onShowAddOptimal.bind(this);
+    this.onShowAddTerrain = this.onShowAddTerrain.bind(this);
   }
 
   onShowMain() {
@@ -21,6 +23,7 @@ class Home extends React.Component {
       showAddSensor: false,
       showAddOptimal: false,
       showMainContent: true,
+      showAddTerrain: false,
     });
   }
 
@@ -29,6 +32,16 @@ class Home extends React.Component {
       showAddSensor: true,
       showMainContent: false,
       showAddOptimal: false,
+      showAddTerrain: false,
+    });
+  }
+
+  onShowAddTerrain() {
+    this.setState({
+      showAddSensor: false,
+      showMainContent: false,
+      showAddOptimal: false,
+      showAddTerrain: true,
     });
   }
 
@@ -37,6 +50,7 @@ class Home extends React.Component {
       showAddSensor: false,
       showMainContent: false,
       showAddOptimal: true,
+      showAddTerrain: false,
     });
   }
 
@@ -48,12 +62,14 @@ class Home extends React.Component {
             onShowMain={this.onShowMain}
             onShowAddSensor={this.onShowAddSensor}
             onShowAddOptimal={this.onShowAddOptimal}
+            onShowAddTerrain={this.onShowAddTerrain}
           />
           <ContentWrapper
             onShowMain={this.onShowMain}
             showMainContent={this.state.showMainContent}
             showAddSensor={this.state.showAddSensor}
             showAddOptimal={this.state.showAddOptimal}
+            showAddTerrain={this.state.showAddTerrain}
           />
         </Wrapper>
       </div>
