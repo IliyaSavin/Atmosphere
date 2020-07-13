@@ -94,6 +94,7 @@ router.get('/sensors', async (req, res) => {
           });
         connection.execSql(request);
     })
+    
 })
 
 module.exports = router;

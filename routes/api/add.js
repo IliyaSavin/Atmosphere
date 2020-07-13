@@ -47,7 +47,7 @@ router.post('/optimal', async (req, res) => {
         INSERTED.id_измеряемой_величины, 
         INSERTED.id_времени_года, 
         INSERTED.id_местности 
-        values( ${id_value}, ${id_season}, ${id_terrain}, ${bottom} , ${top})`, function(err, rowCount, rows) {
+         values(${id_season}, ${id_terrain}, ${id_value}, ${bottom} , ${top})`, function(err, rowCount, rows) {
             if (err) {
                 res.status(500).send('Server error');
             } else {
@@ -66,6 +66,18 @@ router.post('/optimal', async (req, res) => {
         connection.execSql(request);
     })
 })
+
+function checkOptimalValue(data, result) {
+    var connection = new Connection(config);
+    connection.connect();
+    connection.on('connect', function(err) {
+        request = new Request(`insert into Координаты values( ${id_terrain}, ${latitude}, ${longitude})`, function(err, rowCount, rows) {
+            if (err) {
+            }
+            });
+        connection.execSql(request);
+    });
+}
 
 // @route    POST api/terrain
 // @desc     Add new terrain
