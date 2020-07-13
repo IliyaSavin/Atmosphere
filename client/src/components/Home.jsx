@@ -10,12 +10,14 @@ class Home extends React.Component {
       showMainContent: false,
       showAddSensor: false,
       showAddOptimal: false,
-      showAddTerrain: true,
+      showAddTerrain: false,
+      showAddSensorData: true,
     };
     this.onShowMain = this.onShowMain.bind(this);
     this.onShowAddSensor = this.onShowAddSensor.bind(this);
     this.onShowAddOptimal = this.onShowAddOptimal.bind(this);
     this.onShowAddTerrain = this.onShowAddTerrain.bind(this);
+    this.onShowAddSensorData = this.onShowAddSensorData.bind(this);
   }
 
   onShowMain() {
@@ -24,6 +26,7 @@ class Home extends React.Component {
       showAddOptimal: false,
       showMainContent: true,
       showAddTerrain: false,
+      showAddSensorData: false,
     });
   }
 
@@ -33,6 +36,7 @@ class Home extends React.Component {
       showMainContent: false,
       showAddOptimal: false,
       showAddTerrain: false,
+      showAddSensorData: false,
     });
   }
 
@@ -42,6 +46,7 @@ class Home extends React.Component {
       showMainContent: false,
       showAddOptimal: false,
       showAddTerrain: true,
+      showAddSensorData: false,
     });
   }
 
@@ -51,6 +56,18 @@ class Home extends React.Component {
       showMainContent: false,
       showAddOptimal: true,
       showAddTerrain: false,
+      showAddSensorData: false,
+    });
+  }
+
+  onShowAddSensorData() {
+    this.setState({
+      showAddSensor: false,
+      showMainContent: false,
+      showAddOptimal: false,
+      showAddTerrain: false,
+      showAddSensorData: false,
+      showAddSensorData: true,
     });
   }
 
@@ -63,6 +80,7 @@ class Home extends React.Component {
             onShowAddSensor={this.onShowAddSensor}
             onShowAddOptimal={this.onShowAddOptimal}
             onShowAddTerrain={this.onShowAddTerrain}
+            onShowAddSensorData={this.onShowAddSensorData}
           />
           <ContentWrapper
             onShowMain={this.onShowMain}
@@ -70,6 +88,7 @@ class Home extends React.Component {
             showAddSensor={this.state.showAddSensor}
             showAddOptimal={this.state.showAddOptimal}
             showAddTerrain={this.state.showAddTerrain}
+            showAddSensorData={this.state.showAddSensorData}
           />
         </Wrapper>
       </div>

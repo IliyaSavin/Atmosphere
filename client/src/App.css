@@ -379,3 +379,8 @@ input[type='time']::-webkit-clear-button {
 .clock {
   color: white;
 }
+
+::-webkit-calendar-picker-indicator {
+  color: white;
+  background-color: white;
+}

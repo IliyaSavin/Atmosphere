@@ -31,7 +31,13 @@ const ControlPanel = (props) => {
       >
         Добавить местность
       </button>
-      <button onClick={() => {}}>Добавить замер данных датчика</button>
+      <button
+        onClick={() => {
+          props.onShowAddSensorData();
+        }}
+      >
+        Добавить замер данных датчика
+      </button>
       <button onClick={() => {}}>Добавить измеряемую величину</button>
     </div>
   );

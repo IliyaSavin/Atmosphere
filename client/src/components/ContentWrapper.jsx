@@ -3,6 +3,7 @@ import MainContent from './MainContent';
 import AddSensor from './AddSensor';
 import AddOptimal from './AddOptimal';
 import AddTerrain from './AddTerrain';
+import AddSensorData from './AddSensorData';
 
 class ContentWrapper extends React.Component {
   constructor(props) {
@@ -22,6 +23,9 @@ class ContentWrapper extends React.Component {
         )}
         {this.props.showAddTerrain && (
           <AddTerrain onShowMain={this.props.onShowMain} />
+        )}
+        {this.props.showAddSensorData && (
+          <AddSensorData onShowMain={this.props.onShowMain} />
         )}
       </div>
     );
