@@ -36,7 +36,7 @@ function AddMeasuredValue(props) {
       };
 
       axios
-        .post('http://localhost:5000/api/add/measuredValue', data, {
+        .post('/api/add/measuredValue', data, {
           headers: {
             'Content-type': 'application/json',
           },

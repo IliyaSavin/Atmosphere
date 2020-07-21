@@ -52,7 +52,7 @@ function AddSensor(props) {
       };
 
       axios
-        .post('http://localhost:5000/api/add/sensor', data, {
+        .post('/api/add/sensor', data, {
           headers: {
             'Content-type': 'application/json',
           },
@@ -68,7 +68,7 @@ function AddSensor(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/get/measuredValue`, {
+      .get(`/api/get/measuredValue`, {
         headers: {
           'Content-type': 'application/json',
         },

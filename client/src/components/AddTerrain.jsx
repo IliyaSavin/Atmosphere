@@ -43,7 +43,7 @@ function AddTerrain(props) {
       };
 
       axios
-        .post('http://localhost:5000/api/add/terrain', data, {
+        .post('/api/add/terrain', data, {
           headers: {
             'Content-type': 'application/json',
           },

@@ -50,7 +50,7 @@ function AddOptimal(props) {
       };
 
       axios
-        .post('http://localhost:5000/api/add/optimal', data, {
+        .post('/api/add/optimal', data, {
           headers: {
             'Content-type': 'application/json',
           },
@@ -76,7 +76,7 @@ function AddOptimal(props) {
       };
 
       axios
-        .post('http://localhost:5000/api/add/checkOptimal', data, {
+        .post('/api/add/checkOptimal', data, {
           headers: {
             'Content-type': 'application/json',
           },
@@ -97,7 +97,7 @@ function AddOptimal(props) {
 
   function fetchMeasuredValue() {
     axios
-      .get(`http://localhost:5000/api/get/measuredValue`, {
+      .get(`/api/get/measuredValue`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -113,7 +113,7 @@ function AddOptimal(props) {
 
   function fetchSeason() {
     axios
-      .get(`http://localhost:5000/api/get/seasons`, {
+      .get(`/api/get/seasons`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -129,7 +129,7 @@ function AddOptimal(props) {
 
   function fetchTerrain() {
     axios
-      .get(`http://localhost:5000/api/get/terrain`, {
+      .get(`/api/get/terrain`, {
         headers: {
           'Content-type': 'application/json',
         },

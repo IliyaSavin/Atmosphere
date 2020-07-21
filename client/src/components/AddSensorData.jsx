@@ -45,7 +45,7 @@ function AddSensorData(props) {
       };
 
       axios
-        .post('http://localhost:5000/api/add/measurment', data, {
+        .post('/api/add/measurment', data, {
           headers: {
             'Content-type': 'application/json',
           },
@@ -61,7 +61,7 @@ function AddSensorData(props) {
 
   function fetchTerrain() {
     axios
-      .get(`http://localhost:5000/api/get/terrain`, {
+      .get(`/api/get/terrain`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -77,7 +77,7 @@ function AddSensorData(props) {
 
   function fetchSensors() {
     axios
-      .get(`http://localhost:5000/api/get/sensors`, {
+      .get(`/api/get/sensors`, {
         headers: {
           'Content-type': 'application/json',
         },

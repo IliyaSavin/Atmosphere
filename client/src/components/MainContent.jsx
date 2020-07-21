@@ -25,7 +25,7 @@ function MainContent(props) {
 
   const fetchSensors = () => {
     axios
-      .get(`http://localhost:5000/api/main/sensors`, {
+      .get(`/api/main/sensors`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -41,7 +41,7 @@ function MainContent(props) {
 
   const fetchOptimal = () => {
     axios
-      .get(`http://localhost:5000/api/main/optimal`, {
+      .get(`/api/main/optimal`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -57,7 +57,7 @@ function MainContent(props) {
 
   const fetchTerrain = () => {
     axios
-      .get(`http://localhost:5000/api/main/terrain`, {
+      .get(`/api/main/terrain`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -73,7 +73,7 @@ function MainContent(props) {
 
   const fetchMeasurments = () => {
     axios
-      .get(`http://localhost:5000/api/main/measurments`, {
+      .get(`/api/main/measurments`, {
         headers: {
           'Content-type': 'application/json',
         },
