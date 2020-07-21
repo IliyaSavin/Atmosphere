@@ -1,7 +1,24 @@
 ﻿const express = require('express');
 const router = express.Router();
-const config = require('../../config/db');
+//const config = require('../../config/db');
 const { Connection, Request } = require("tedious");
+
+var config = {
+    authentication: {
+        options: {
+          userName: "adminserv", // update me
+          password: "123456789Qw" // update me
+        },
+        type: "default"
+      },
+      server: "nubipsserver.database.windows.net", // update me
+      options: {
+        database: "Practice", //update me
+        encrypt: true,
+        packetSize: 32768,
+        trustServerCertificate: true
+      }
+};
 
 router.get('/sensors', async (req, res) => {
     var connection = new Connection(config);
