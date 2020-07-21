@@ -4,6 +4,9 @@ const path = require('path');
 
 const app = express();
 
+// Connect to database
+//connectDB();
+
 // Init Middleware
 app.use(express.json({extended: false}));
 app.use(express.static(__dirname + '/public'));
